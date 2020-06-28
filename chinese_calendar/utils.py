@@ -57,9 +57,9 @@ def is_workday(date):
     :type date: datetime.date | datetime.datetime
     :rtype: bool
     """
-    date = _validate_date(date)
+    #date = _validate_date(date)
 
-    weekday = date.weekday()
+    weekday = datetime.strptime(date, '%Y-%m-%d').weekday()
     return bool(date in workdays.keys() or (weekday <= 4 and date not in holidays.keys()))
 
 
