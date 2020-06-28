@@ -59,7 +59,7 @@ def is_workday(date):
     """
     #date = _validate_date(date)
 
-    weekday = datetime.strptime(date, '%Y-%m-%d').weekday()
+    weekday = datetime.datetime.strptime(date, '%Y-%m-%d').weekday()
     return bool(date in workdays.keys() or (weekday <= 4 and date not in holidays.keys()))
 
 
